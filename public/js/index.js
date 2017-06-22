@@ -4,10 +4,7 @@ var socket = io();
 socket.on('connect', function(){
   console.log('connected to server')
 
-  socket.emit('newMessage', {
-    from: 'Jessica',
-    text: 'Hey sexy boy'
-  });
+
 });
 
 socket.on('disconnect', function(){
@@ -15,8 +12,8 @@ socket.on('disconnect', function(){
 })
 
 
-socket.on('createMessage', function(email){
-  console.log('new message =>', email)
+socket.on('newMessage', function(msg){
+  console.log('new message =>', msg)
 })
 
 // socket.on('learn', function(lesson){
